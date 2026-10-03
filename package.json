@@ -1,0 +1,12 @@
+{
+  "name": "heart-disease-prediction-system",
+  "version": "1.0.0",
+  "description": "Heart Disease Risk Prediction System powered by React Vite & Node Express",
+  "scripts": {
+    "dev": "npm --prefix client run dev",
+    "start": "npm --prefix server start",
+    "build": "npm --prefix client run build",
+    "client": "npm --prefix client run dev",
+    "server": "npm --prefix server start"
+  }
+}

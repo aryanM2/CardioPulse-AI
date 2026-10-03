@@ -1,0 +1,17 @@
+{
+  "name": "heart-disease-server",
+  "version": "1.0.0",
+  "description": "Express server bridge for Heart Disease Prediction",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "axios": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.14"
+  }
+}
