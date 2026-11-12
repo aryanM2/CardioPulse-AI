@@ -6,9 +6,11 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-// Docker service name for FastAPI
-const ML_SERVICE_URL =
-  process.env.ML_SERVICE_URL || 'http://127.0.0.1:8000';
+// ML Microservice URL (FastAPI)
+let ML_SERVICE_URL = process.env.ML_SERVICE_URL || 'http://127.0.0.1:8000';
+if (ML_SERVICE_URL && !ML_SERVICE_URL.startsWith('http://') && !ML_SERVICE_URL.startsWith('https://')) {
+  ML_SERVICE_URL = `https://${ML_SERVICE_URL}`;
+}
 
 app.use(cors());
 app.use(express.json());

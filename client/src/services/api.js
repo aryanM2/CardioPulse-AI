@@ -1,9 +1,14 @@
 import axios from 'axios';
 
-// Base Axios instance pointing to FastAPI ML Microservice
+// Base Axios instance pointing to Backend Gateway / FastAPI ML Microservice
+let rawBaseURL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+if (rawBaseURL && !rawBaseURL.startsWith('http://') && !rawBaseURL.startsWith('https://')) {
+  rawBaseURL = `https://${rawBaseURL}`;
+}
+
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000',
-  timeout: 8000,
+  baseURL: rawBaseURL,
+  timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
   },

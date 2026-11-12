@@ -51,11 +51,21 @@ docker-compose up --build
 
 You will need Node.js and Python installed.
 
-#### 1. ML Service (FastAPI)
+#### 1. ML Service (FastAPI & Training)
 ```bash
 cd ml_service
 pip install -r requirements.txt
+
+# To run the prediction service:
 python main.py
+
+# To train / retrain the ML model on the dataset:
+python train.py                 # Evaluates and trains models (Logistic, RF, GB)
+python train.py --model rf      # Trains & exports Random Forest
+python train.py --model logistic # Trains & exports Logistic Regression
+
+# To evaluate an existing model on the dataset:
+python evaluate_existing.py
 ```
 *(Runs on `http://localhost:8000`)*
 
@@ -74,6 +84,24 @@ npm install
 npm run dev
 ```
 *(Runs on `http://localhost:5173`)*
+
+---
+
+## Free Cloud Deployment Guide
+
+You can deploy the entire full-stack project for free using **Render.com** (via the included `render.yaml` Blueprint) or **Vercel + Render**:
+
+### Method 1: 1-Click Blueprint on Render.com (Recommended & 100% Free)
+1. Push your project to a GitHub repository.
+2. Sign up / Log in to [Render.com](https://render.com/) with GitHub.
+3. Click **New +** -> **Blueprint**.
+4. Connect your GitHub repository. Render will automatically read `render.yaml` and provision:
+   - **`heart-disease-client`**: React Frontend as a high-speed Static Site (100% free, no sleep).
+   - **`heart-disease-server`**: Express API Gateway Web Service (Free tier).
+   - **`heart-disease-ml`**: Python FastAPI ML Microservice (Free tier).
+5. Click **Apply**. Render will build and deploy all 3 tiers automatically with live HTTPS URLs!
+
+---
 
 ## Input Parameters
 
