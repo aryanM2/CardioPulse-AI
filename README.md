@@ -87,35 +87,6 @@ npm run dev
 
 ---
 
-## Free Cloud Deployment Guide
-
-You can deploy the entire full-stack project for free using **Render.com** (via the included `render.yaml` Blueprint) or **Vercel + Render**:
-
-### Method 1: 1-Click Blueprint on Render.com (Recommended & 100% Free)
-1. Push your project to a GitHub repository.
-2. Sign up / Log in to [Render.com](https://render.com/) with GitHub.
-3. Click **New +** -> **Blueprint**.
-4. Connect your GitHub repository. Render will automatically read `render.yaml` and provision:
-   - **`heart-disease-client`**: React Frontend as a high-speed Static Site (100% free, no sleep).
-   - **`heart-disease-server`**: Express API Gateway Web Service (Free tier).
-   - **`heart-disease-ml`**: Python FastAPI ML Microservice (Free tier).
-5. Click **Apply**. Render will build and deploy all 3 tiers automatically with live HTTPS URLs!
-
----
-
-## Input Parameters
-
-The model evaluates the following clinical features:
-- **Age & Sex**
-- **Resting Blood Pressure** (`restingBP`)
-- **Serum Cholesterol** (`cholesterol`)
-- **Fasting Blood Sugar** (`fastingBS`)
-- **Resting ECG** (`Normal`, `ST`, `LVH`)
-- **Max Heart Rate** (`maxHR`)
-- **Exercise Angina** (`Y` / `N`)
-- **Oldpeak** (ST depression)
-- **Chest Pain Type** (`TA`, `ATA`, `NAP`, `ASY`)
-- **ST Slope** (`Up`, `Flat`, `Down`)
 
 ## Disclaimer
 
